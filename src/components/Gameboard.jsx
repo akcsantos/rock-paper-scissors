@@ -15,6 +15,8 @@ export default function Gameboard({
   setPlayerScore,
   computerScore,
   playerScore,
+  round,
+  setRound,
 }) {
   function playGame() {
     if (playerSelected === "" && computerSelected === "") {
@@ -53,19 +55,22 @@ export default function Gameboard({
     if (targetValue === "rock") {
       setPlayerDisplay(styles.rock);
       setPlayerSelected("rock");
+      setRound(round + 1);
     } else if (targetValue === "paper") {
       setPlayerDisplay(styles.paper);
       setPlayerSelected("paper");
+      setRound(round + 1);
     } else {
       setPlayerDisplay(styles.scissors);
       setPlayerSelected("scissors");
+      setRound(round + 1);
     }
 
     handleComputerChoice();
   }
   useEffect(() => {
     playGame();
-  }, [playerSelected]);
+  }, [round]);
   return (
     <div className={styles.gameboard}>
       <div className={styles.selected}>

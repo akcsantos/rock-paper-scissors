@@ -13,11 +13,16 @@ function App() {
   const [winner, setWinner] = useState("Let's see what you got");
   const [playerScore, setPlayerScore] = useState(0);
   const [computerScore, setComputerScore] = useState(0);
+  const [round, setRound] = useState(0);
 
   return (
     <div>
       <Header />
-      <Scoreboard />
+      <Scoreboard
+        playerScore={playerScore}
+        computerScore={computerScore}
+        round={round}
+      />
       <Winner winner={winner} />
       <Gameboard
         setPlayerDisplay={setPlayerDisplay}
@@ -33,6 +38,8 @@ function App() {
         setComputerScore={setComputerScore}
         playerScore={playerScore}
         computerScore={computerScore}
+        round={round}
+        setRound={setRound}
       />
     </div>
   );

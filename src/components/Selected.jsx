@@ -1,11 +1,10 @@
-import Circles from "./Circles";
 import styles from "./selected.module.css";
 
 export default function Selected() {
   return (
     <div className={styles.selected}>
-      <Circles />
-      <Circles />
+      <div className={styles.playerChoice}></div>
+      <div className={styles.computerChoice}></div>
     </div>
   );
 }

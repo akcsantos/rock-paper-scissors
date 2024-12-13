@@ -1,5 +1,5 @@
 import styles from "./winner.module.css";
 
-export default function Winner() {
-  return <h2 className={styles.winner}>Winner! 🎉</h2>;
+export default function Winner({ winner }) {
+  return <h2 className={styles.winner}>{winner}</h2>;
 }

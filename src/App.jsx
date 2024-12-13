@@ -3,17 +3,23 @@ import "./App.css";
 import Header from "./components/Header";
 import Scoreboard from "./components/Scoreboard";
 import Winner from "./components/Winner";
-import Selected from "./components/Selected";
-import Choices from "./components/Choices";
+import Gameboard from "./components/Gameboard";
 
 function App() {
+  const [playerSelected, setPlayerSelected] = useState("");
+  const [computerSelected, setComputerSelected] = useState("");
+
   return (
     <div>
       <Header />
       <Scoreboard />
       <Winner />
-      <Selected />
-      <Choices />
+      <Gameboard
+        setPlayerSelected={setPlayerSelected}
+        playerSelected={playerSelected}
+        computerSelected={computerSelected}
+        setComputerSelected={setComputerSelected}
+      />
     </div>
   );
 }
